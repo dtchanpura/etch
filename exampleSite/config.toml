@@ -11,6 +11,10 @@ pygmentsUseClasses = true
   copyright = "Copyright © 2021 Your Name"
   dark = "auto"
   highlight = true
+  [params.plausible]
+    enabled = false
+    domain = "example.com"
+    src = "https://plausible.io/js/plausible.js"
 
 [menu]
   [[menu.main]]

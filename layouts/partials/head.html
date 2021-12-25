@@ -27,5 +27,9 @@
     {{ $css := $resources | resources.Concat "css/style.css" | minify }}
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
+    {{ with .Site.Params.plausible -}}
+        {{ if .enabled }}<script async defer data-domain="{{ .domain }}" src="{{ .src }}"></script>{{ end }}
+    {{ end -}}
+
     <title>{{ .Title }}</title>
 </head>
