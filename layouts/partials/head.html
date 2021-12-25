@@ -31,5 +31,9 @@
         {{ if .enabled }}<script async defer data-domain="{{ .domain }}" src="{{ .src }}"></script>{{ end }}
     {{ end -}}
 
+    {{ range .Site.Params.stylesheets -}}
+        {{ printf `<link rel="stylesheet" href="%s">` . | safeHTML }}
+    {{ end -}}
+
     <title>{{ .Title }}</title>
 </head>
